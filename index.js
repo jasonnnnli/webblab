@@ -24,12 +24,12 @@ if(!db) {
  * Hello world functions below...
  */
 /** TO DO */
-app.get("/hello“，（req.res） =>{
+app.get("/hello“，（req,res） =>{
 res.send({
     message:"hello,you sent a GET request"
 });
 });
-app.post("/hello“，（req.res） =>{
+app.post("/hello“，（req,res） =>{
 res.send({
     message:"hello,you sent a POST request"
 });
