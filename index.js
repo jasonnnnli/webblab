@@ -16,15 +16,24 @@ pgp.pg.defaults.ssl = true;
 let db = pgp(process.env.DATABASE_URL);
 
 if(!db) {
-   console.log("Please make sure that postgres is an addon!");
-   process.exit(1);
+    console.log("Please make sure that postgres is an addon!");
+    process.exit(1);
 }
 
 /*
  * Hello world functions below...
  */
 /** TO DO */
-
+app.get("/hello“，（req.res） =>{
+res.send({
+    message:"hello,you sent a GET request"
+});
+});
+app.post("/hello“，（req.res） =>{
+res.send({
+    message:"hello,you sent a POST request"
+});
+});
 /*
  * Return HTML for the / end point. 
  * This is a nice location to document your web service API
@@ -35,7 +44,7 @@ app.get("/", (req, res) => {
     res.writeHead(200, {'Content-Type': 'text/html'});
     for (i = 1; i < 7; i++) {
         //write a response to the client
-        res.write('<h' + i + ' style="color:blue">Hello World!</h' + i + '>'); 
+        res.write('<h' + i + ' style="color:blue">Hello World!</h' + i + '>');
     }
     res.end(); //end the response
 });
@@ -49,7 +58,7 @@ app.get("/", (req, res) => {
 * You can consider 'let port = process.env.PORT || 5000' to be equivalent to:
 * let port; = process.env.PORT;
 * if(port == null) {port = 5000} 
-*/ 
+*/
 app.listen(process.env.PORT || 5000, () => {
     console.log("Server up and running on port: " + (process.env.PORT || 5000));
 });
