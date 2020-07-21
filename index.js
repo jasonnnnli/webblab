@@ -24,7 +24,16 @@ if(!db) {
  * Hello world functions below...
  */
 /** TO DO */
-
+app.get("/hello“,（req,res） =>{
+    res.send({
+        message:"hello,you sent a GET request"
+    });
+});
+app.post("/hello“,（req,es） =>{
+    res.send({
+        message:"hello,you sent a POST request"
+    });
+});
 /*
  * Return HTML for the / end point. 
  * This is a nice location to document your web service API
